@@ -5,7 +5,12 @@ import Heading from './Heading'
 //   return <h1>This is h1 heading</h1>
 // }
 function App() {
-  return <Heading />
+  return (
+    <div className = 'App'>
+      <Heading firstName = 'Bob' />
+      <Heading firstName = 'Betty' />
+    </div>
+  )
 }
 
 export default App;
