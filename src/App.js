@@ -1,18 +1,20 @@
 import './App.css';
+import React from 'react';
+import Fruits from './Fruits'
+import FruitsCounter from './FruitsCounter';
 
 function App() {
-  function handleClick(){
-    const randomNum = Math.floor(Math.random() * 3) + 1;
-    console.log(randomNum);
-    const userInput = prompt('type a number');
-    alert(`Computer number: ${randomNum}, Your number: ${userInput}`) 
-  }
-  return(
-    <div>
-      <h1>Task: Add a button and handle a click event</h1>
-      <button onClick={handleClick}>
-        Guess the number between 1 and 3
-      </button>
+  const [fruits] = React.useState([
+    {fruitName: 'apple', id: 1},
+    {fruitName: 'apple', id: 2},
+    {fruitName: 'plum', id: 3},
+  ]);
+
+  return (
+    <div className = 'App'>
+      <h1>Where should the state go?</h1>
+      <Fruits fruits = {fruits}/>
+      <FruitsCounter fruits = {fruits}/>
     </div>
   )
 }
