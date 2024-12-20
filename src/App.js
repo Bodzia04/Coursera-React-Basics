@@ -1,21 +1,24 @@
-import './App.css';
-import React from 'react';
-import Fruits from './Fruits'
-import FruitsCounter from './FruitsCounter';
+import React from "react";
+import Homepage from './Homepage';
+import AboutLittleLemone from './AboutLittleLemone';
+import Contact from './Contact';
+import { BrowserRouter, Routes, Route, Link,} from "react-router-dom";
 
-function App() {
-  const [fruits] = React.useState([
-    {fruitName: 'apple', id: 1},
-    {fruitName: 'apple', id: 2},
-    {fruitName: 'plum', id: 3},
-  ]);
-
+function App(){
   return (
-    <div className = 'App'>
-      <h1>Where should the state go?</h1>
-      <Fruits fruits = {fruits}/>
-      <FruitsCounter fruits = {fruits}/>
-    </div>
+    <BrowserRouter>
+      <nav>
+        <Link to='/' className='nav-item'>Homepage  </Link>
+        <Link to='/about' className='nav-item'>About Little Lemone  </Link> 
+        <Link to='/contact' className='nav-item'>Contact</Link> 
+      </nav>
+        <Routes>
+          <Route path='/' element={<Homepage />}/>
+          <Route path='/about' element={<AboutLittleLemone />}/>
+          <Route path='/contact' element={<Contact />}/>
+        </Routes>
+    </BrowserRouter>
+
   )
 }
 
