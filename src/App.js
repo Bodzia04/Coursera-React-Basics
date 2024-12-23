@@ -1,24 +1,13 @@
 import React from "react";
-import Homepage from './Homepage';
-import AboutLittleLemone from './AboutLittleLemone';
-import Contact from './Contact';
-import { BrowserRouter, Routes, Route, Link,} from "react-router-dom";
+import './App.css';
+import logo from './assets/Bentley.jpg'
 
 function App(){
-  return (
-    <BrowserRouter>
-      <nav>
-        <Link to='/' className='nav-item'>Homepage  </Link>
-        <Link to='/about' className='nav-item'>About Little Lemone  </Link> 
-        <Link to='/contact' className='nav-item'>Contact</Link> 
-      </nav>
-        <Routes>
-          <Route path='/' element={<Homepage />}/>
-          <Route path='/about' element={<AboutLittleLemone />}/>
-          <Route path='/contact' element={<Contact />}/>
-        </Routes>
-    </BrowserRouter>
-
+  return(
+    <div className="App">
+      <h1>Bentley</h1>
+      <img src={logo} alt="logo"></img>
+    </div>
   )
 }
 
